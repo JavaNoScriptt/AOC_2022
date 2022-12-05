@@ -1,7 +1,10 @@
-input=''''''
-input_list = input.split('/n/n')
-for items in input_list:
-  highest =0
+input = open('sample.txt','r')
+input = input.read()
+highest =0
+for items in input.split('\n\n'):
   current = 0
-  for i in items.split('/n'):
-    print(i)
+  for i in items.split('\n'):
+    current+=int(i)   
+  if current > highest:
+    highest = current
+print(highest)
