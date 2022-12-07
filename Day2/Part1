@@ -1,0 +1,26 @@
+f = open("Day 2/Sample.txt","r")
+input=f.read()
+diction={
+    "A":1,  #Rock
+    "B":2,  #Paper
+    "C":3,  #Scissors
+    "X":1,  #Rock
+    "Y":2, #Paper
+    "Z":3   #Scissors
+}
+score = 0
+for i in input.split("\n"):
+    score+= diction[i[-1]]
+    if i[-1] == "X":
+        if i[0] == "C": score+= 6 #Win 
+        elif i[0] == "B": score+=0 #Lose
+        else: score+=3
+    elif i[-1] == "Y":
+        if i[0] == "A": score+= 6 #Win
+        elif i[0] == "C": score+=0 #Lose
+        else: score+=3
+    else:
+        if i[0] == "B": score+= 6 #Win
+        elif i[0] == "A": score+=0 #Lose
+        else: score+=3 #Tie
+print(score)
