@@ -1,4 +1,4 @@
-input = open('sample.txt','r')
+input = open('/Day1/sample.txt','r')
 input = input.read()
 highest =0
 for items in input.split('\n\n'):
