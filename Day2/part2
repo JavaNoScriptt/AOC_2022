@@ -1,0 +1,25 @@
+f= open("Sample.txt","r")
+input=f.read()
+diction={
+    "A":1,  #Rock
+    "B":2,  #Paper
+    "C":3,  #Scissors    
+}
+score = 0
+for item in input.split('\n'):
+    #Lose
+    if item[-1]=="X":
+        if item[0] =="A": score+=3
+        elif item[0] =="B": score+= 1
+        else: score+= 2+0
+    #Draw
+    elif item[-1]=="Y":
+        if item[0] =="A": score+=4
+        elif item[0] =="B": score+=5
+        else: score+=6
+    #Win
+    else:
+        if item[0] =="A": score+=8
+        elif item[0] =="B": score+=9
+        else:score+=7
+print(score)
